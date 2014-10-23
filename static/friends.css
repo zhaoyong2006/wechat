@@ -1,0 +1,48 @@
+* { margin:0; padding:0; border:0;}
+a { text-decoration:none; border:0px; color:#000; }
+a:hover { text-decoration:none; border:0px; } 
+h1,h2,h3,h4,h5,h6 { font-size:12px; font-weight:normal; font-family:"宋体"; }
+ul li,ol li { list-style-type:none; text-decoration:none; }
+
+
+.friendsTop{float:left; width:100%; height:105px; position:relative; }
+.friendsTop .friendsPhoto{ position:absolute; width:200px; height:200px; border:1px solid #D5D5D5; left:50%; top:5px; margin-left:-102px; border-radius:5px;}
+.friendsTop .friendsPhoto img{ border-radius:5px;vertical-align:middle;}
+.friendsTop .friendsPhoto dl{ position:absolute; width:120px; right:0; top:80px;}
+.friendsTop .friendsPhoto dl dt{ float:left; width:120px; line-height:25px; font-family:"微软雅黑"; color:#8e8e8e;}
+.friendsTop .friendsPhoto dl dd{padding:28px 0 0 0; float:left; width:120px; line-height:25px; font-family:Arial; color:#5b5a5a; font-weight:bold; font-size:18px;}
+.friendsInfo{ float:left; width:100%; margin-top:105px; height:auto}
+.friendsInfo dd{ border:1px dashed #ababab; display:block; background-color:#fbf9f5; margin:10px 10px 0 10px; border-radius:7px;}
+.friendsInfo dt img{ float:left;}
+.spanSingle{ padding:0 5px; min-height:30px; line-height:30px; font-family:"微软雅黑"; font-size:14px; display:block;}
+.spanMulti{ padding:0 5px; min-height:22px; line-height:22px; font-family:"微软雅黑"; font-size:13px; display:block;}
+.infoDiv{margin-left:10px;margin-right:10px;}
+.nickname{ padding:0 5px; color:#0058B0; font-family:"微软雅黑"; font-size:18px; margin-left:-5px;}
+.favorite{ padding:0 5px; color:#9A9A9A; font-family:"微软雅黑"; font-size:13px; margin-left:3px;}
+.tagBox{background-color:#AAB5C3; border-radius:6px; padding:3px 3px 3px 3px; margin-right:5px;}
+.tagBoxGroup{font-size:12px; min-height:35px; line-height:35px; font-weight:bold; font-family:"宋体"; color:#FFFFFF; margin-left:10px;margin-right:10px;}
+.prevArrow{position:absolute;left:8px; top:95px;background:url(./images/l_dot.png); border-style:none; width:18px; height:26px; background-repeat:no-repeat;}
+.nextArrow{position:absolute;right:8px; top:95px;background:url(./images/r_dot.png); border-style:none; width:18px; height:26px; background-repeat:no-repeat;}
+
+button.cupid-blue {
+  background-color: #d7e5f5;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d7e5f5), color-stop(100%, #cbe0f5));
+  background-image: -webkit-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -moz-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -ms-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: -o-linear-gradient(top, #d7e5f5, #cbe0f5);
+  background-image: linear-gradient(top, #d7e5f5, #cbe0f5);
+  border-top: 1px solid #abbbcc;
+  border-left: 1px solid #a7b6c7;
+  border-bottom: 1px solid #a1afbf;
+  border-right: 1px solid #a7b6c7;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 white;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #1a3e66;
+  font: normal 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 4px 2px 4px 2px;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+  margin-left:5px;
+}
