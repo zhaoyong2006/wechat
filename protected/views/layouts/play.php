@@ -59,7 +59,7 @@ $gAction    = $this->getAction()->getId();
 		    </li>
             <?php }?>
             <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session['admin'];?><b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo Yii::app()->user->name;?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                 <li><a href="<?php echo $this->createUrl('home/doLogout');?>">退出</a></li>
                             </ul>

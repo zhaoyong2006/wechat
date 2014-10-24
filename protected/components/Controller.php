@@ -158,13 +158,13 @@ class Controller extends CController
 	/**
 	* session 控制
 	*/
-	public function filterAccessControl($filterChain)
+	/*public function filterAccessControl($filterChain)
     {
        if($this->session['admin'] == ''){
             $this->redirect(array('admin/home/index'));
         } 
         $filterChain->run();
-	}
+	}*/
 	/**
 	* 微信浏览器浏览控制
 	*/
