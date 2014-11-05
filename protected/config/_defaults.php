@@ -22,6 +22,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.extensions.*',
 	),
 
 	'modules'=>array(
@@ -31,7 +32,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('','::1'),
+			'ipFilters'=>array('211.99.254.34','::1'),
 		),
 		'admin'=>array(
 		),

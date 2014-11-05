@@ -14,8 +14,10 @@ class HomeController extends Controller{
 	* 登陆
 	*/
 	public function actionIndex(){
-		if($this->session['admin'] == 'playcrab'){
-            $this->redirect(array('home/main'));
+		Yii::app()->user->returnUrl = "/admin/home/main";
+		if(!Yii::app()->user->isGuest){
+			$this->redirect(Yii::app()->user->returnUrl);
+			//$this->redirect(array('home/main'));
 		}
 		$this->renderPartial('login');
 	}
@@ -25,16 +27,16 @@ class HomeController extends Controller{
 	public function actionDoLogin(){
 		$username = trim(addslashes($_POST['username']));
 		$password = trim(addslashes($_POST['password']));
-		$user = array(
-			'simon'=>'zhaoyong',
-		);
 
-		if(@$user[$username] != $password){
-			$this->errorJump('帐号或密码错误','home/index');
-			exit;
-		}
-	$this->session['admin'] = $username;
-	$this->redirect(array('home/main'));	
+		$identity = new UserIdentity($username,$password);
+		if($identity->authenticate())
+				Yii::app()->user->login($identity);
+		else
+				echo $identity->errorMessage;
+
+		$this->redirect(Yii::app()->user->returnUrl);
+		//$this->redirect(array('home/main'));
+
 	}
 	/**
 	* 后台主页
@@ -48,10 +50,6 @@ class HomeController extends Controller{
 		$signModel = new SignLog();
 		//$signModel = SignLog::model();
 		$res = $signModel->findBySql($sql);
-		//echo $res['num'];exit;
-		echo "<pre>";
-		print_r($res);
-		echo "</pre>";exit;
 		$huoren = $res['num'];
 		echo $huoren;exit;
 		*/$this->render('main',array('count'=>$fansCount));
@@ -62,13 +60,13 @@ class HomeController extends Controller{
 	public function filters()
     {
         return array(
-            'AccessControl - index,doLogin',
+            'accessControl - index,doLogin',
         );
     }
 	public function actionDoLogout(){
-		$this->session->clear();	
-		$this->session->destroy();
-
+		Yii::app()->user->logout();
+		
 		$this->redirect(array('home/index'));
+		
 	}
 }

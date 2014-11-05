@@ -241,7 +241,7 @@ class NewsController extends Controller{
     public function filters()
     {
         return array(
-            'AccessControl',
+            'accessControl',
         );
     }
 }

@@ -12,13 +12,11 @@ $gAction    = $this->getAction()->getId();
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Starter Template for Bootstrap</title>
+	<title><?php echo Yii::app()->name;?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo Yii::app()->request->baseUrl; ?>/dist/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="<?php echo Yii::app()->request->baseUrl; ?>/dist/css/my.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -30,7 +28,11 @@ $gAction    = $this->getAction()->getId();
   </head>
 
   <body>
-
+    <div id="message-container" style="width:100%; top:50px; z-index: 100; position: fixed;display:none;">
+      <div class="text-center container" style="width:400px;">
+        <div class="alert alert-danger" id="message-alert"></div>
+      </div>
+    </div>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -70,6 +72,7 @@ $gAction    = $this->getAction()->getId();
       </div>
     </div>
 
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <div class="container" style="padding-top:70px">
 
       <div class="row">
@@ -93,6 +96,7 @@ $gAction    = $this->getAction()->getId();
 <?php if($gAction != 'add'){?>
     <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/static/js/main.js"></script>
 <?php }?> 
  </body>
 </html>
